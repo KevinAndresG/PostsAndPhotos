@@ -1,0 +1,109 @@
+#card {
+  display: flex;
+  padding: 50px 20px 20px;
+  border-radius: 10px;
+  position: relative;
+  overflow-y: auto;
+  width: 300px;
+  height: 580px;
+  background-color: #444444;
+  flex-direction: column;
+  border: 1px solid rgb(168, 168, 168);
+  box-shadow: 0 0 10px 2px rgb(85, 85, 85);
+  transition: box-shadow 0.2s ease-in-out, border 0.2s ease-in-out,
+    scale 0.2s ease-in-out;
+
+  .top-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    .thumbnail {
+      border-radius: 50%;
+      border: 1px solid rgb(0, 0, 0);
+      box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.404);
+      transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+        border-radius 0.2s ease-in-out, filter 0.2s ease-in-out;
+    }
+
+    .photo-title {
+      margin: 0;
+      color: rgb(84, 151, 209);
+      line-height: 1.5em;
+    }
+  }
+  .bottom-info {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    .post-title {
+      margin: 0;
+      color: rgb(127, 195, 255);
+      line-height: 1.5em;
+      letter-spacing: 2px;
+    }
+    .post-description {
+      line-height: 1.5em;
+      margin: 0;
+      color: rgb(179, 220, 255);
+      letter-spacing: 2px;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    bottom: 5%;
+    left: 0;
+    flex-wrap: wrap;
+
+    button {
+      width: 40%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid rgb(255, 255, 255);
+      border-radius: 10px;
+      font-weight: bolder;
+      letter-spacing: 1px;
+      background-color: rgb(84, 151, 209);
+      color: rgb(255, 255, 255);
+      opacity: 0;
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+        border 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(255, 255, 255);
+        color: rgb(84, 151, 209);
+        border: 1px solid rgb(84, 151, 209);
+      }
+    }
+  }
+  &:hover {
+    box-shadow: 0 0 20px 3px rgb(233, 233, 233);
+    border: 1px solid rgb(43, 43, 43);
+    // cursor: pointer;
+    scale: 1.08;
+
+    .top-info {
+      .thumbnail {
+        border: 1px solid rgb(0, 0, 0);
+        box-shadow: 0 0 20px 2px rgba(121, 121, 121, 0.623);
+        border-radius: 25%;
+        filter: brightness(1.2);
+      }
+    }
+    .buttons {
+      button {
+        opacity: 1;
+      }
+    }
+  }
+}
